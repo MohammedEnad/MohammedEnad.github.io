@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | Alraed Database Backup</title>
+  <meta name="description" content="How Alraed Database Backup accesses, uses, stores, shares and deletes data when saving personal database backups to Google Drive.">
+  <style>
+    :root{color-scheme:light;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#162c47;background:#f3f7fb}*{box-sizing:border-box}body{margin:0;line-height:1.7}header,main,footer{max-width:850px;margin:auto;padding:25px}header{display:flex;gap:20px;justify-content:space-between;align-items:center;border-bottom:1px solid #d5e0ec}nav{display:flex;gap:20px;flex-wrap:wrap}a{color:#135bae;text-underline-offset:4px}main{background:white;margin-top:30px;margin-bottom:30px;border:1px solid #d5e0ec;border-radius:12px;padding:35px}h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.2;margin:0 0 12px}h2{font-size:1.3rem;margin-top:30px}p,li{font-size:1rem}.date,footer{color:#52667e;font-size:.875rem}footer{border-top:1px solid #d5e0ec}a:focus-visible{outline:3px solid #135bae;outline-offset:4px}@media(max-width:540px){header{align-items:flex-start;flex-direction:column}header,main,footer{padding-left:20px;padding-right:20px}main{border-radius:0;margin-top:15px}}
+  </style>
+</head>
+<body>
+  <header><strong>Alraed Database Backup</strong><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="privacy.html" aria-current="page">Privacy policy</a></nav></header>
+  <main>
+    <h1>Privacy policy</h1>
+    <p class="date">Effective date: October 1, 2026</p>
+    <p>This policy describes the personal Alraed Database Backup workflow operated by Mohammed Enad. The workflow runs on the owner's Windows computer and uses rclone to store database backups in the owner's authorized Google Drive account.</p>
+    <h2>Information accessed and used</h2>
+    <ul><li><strong>Database backup files:</strong> full SQL backup files produced from the owner's AlraedDb database. These files contain the information stored in that database and may include personal or business information.</li><li><strong>Google Drive information:</strong> the backup files and folders available to the app, including names, identifiers, sizes, checksums and other metadata needed to upload, verify, list and manage backups.</li><li><strong>Authorization tokens:</strong> OAuth tokens issued by Google after the owner grants consent, allowing the local tool to run scheduled uploads.</li><li><strong>Local logs:</strong> operational details such as backup filenames, timestamps, completion status and errors, stored on the owner's computer.</li></ul>
+    <p>The workflow requests the Google Drive <code>drive.file</code> scope. Its configured purpose is to manage its own backup folder and files. It does not request access to Gmail messages or unrelated Google Drive files.</p>
+    <h2>Purpose and processing</h2>
+    <p>Data is used to create a full database backup, upload it to Google Drive, check that the upload matches the local backup, and remove older backups under the retention setting. The backup scripts and rclone run locally; this informational website does not receive database files or OAuth tokens.</p>
+    <h2>Storage and security</h2>
+    <p>Backup files and logs are stored on the owner's Windows computer. Uploaded backups are stored in the owner's Google Drive. OAuth tokens are stored in the local rclone configuration file; access to that file must be restricted to trusted Windows users. Google Drive API transfers use HTTPS.</p>
+    <p>The supplied backup workflow does not separately encrypt the SQL backup files before upload. File access therefore depends on local folder permissions and the owner's Google Drive sharing settings. The owner is responsible for keeping credentials private and controlling access to backups.</p>
+    <h2>Sharing and third parties</h2>
+    <p>Google processes uploaded backups to provide Google Drive storage under its own terms and privacy policy. The workflow does not sell Google user data, use it for advertising, or transmit backups to additional services. A person with access granted by the owner to the local backup folder or Google Drive backup folder may be able to read its files.</p>
+    <p>GitHub Pages hosts these public informational pages and may process connection information to deliver the website under GitHub's privacy practices. These pages contain no embedded analytics, advertising, forms, or tracking scripts.</p>
+    <h2>Retention and deletion</h2>
+    <p>After a successful backup and verified upload, the supplied scripts retain the latest three managed completed backups in each location and permanently delete older managed backups. If backup or upload verification fails, existing backups are preserved, so more than three files may temporarily remain. Failed partial backups and local logs remain available for troubleshooting until the owner removes them.</p>
+    <p>The owner can delete local files and logs from Windows and uploaded backups from Google Drive. Revoking Google authorization stops future access; it does not automatically delete files already stored on the computer or in Google Drive.</p>
+    <h2>Control over authorization</h2>
+    <p>The owner can disable the Windows scheduled task at any time and revoke the app's access through the Google Account third-party connections settings. The owner can also remove the local rclone configuration to remove locally stored authorization tokens.</p>
+    <h2>Changes and contact</h2>
+    <p>This policy should be updated whenever the workflow's permissions, processing, retention or sharing practices change.</p>
+    <p>Questions and deletion requests: <a href="mailto:malmbasha@gmail.com">malmbasha@gmail.com</a>.</p>
+  </main>
+  <footer>Alraed Database Backup · Operated by Mohammed Enad</footer>
+</body>
+</html>

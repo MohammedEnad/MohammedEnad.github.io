@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alraed Database Backup</title>
+  <meta name="description" content="Information about Alraed Database Backup, a personal tool for saving verified SQL database backups to the owner's Google Drive.">
+  <style>
+    :root{color-scheme:light;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#162c47;background:#f3f7fb}*{box-sizing:border-box}body{margin:0;line-height:1.7}header,main,footer{max-width:850px;margin:auto;padding:25px}header{display:flex;gap:20px;justify-content:space-between;align-items:center;border-bottom:1px solid #d5e0ec}nav{display:flex;gap:20px;flex-wrap:wrap}a{color:#135bae;text-underline-offset:4px}main{padding-top:50px;padding-bottom:50px}h1{font-size:clamp(2rem,5vw,3rem);line-height:1.2;margin:0 0 24px}h2{font-size:1.35rem;margin-top:32px}p,li{font-size:1rem}section{background:white;border:1px solid #d5e0ec;border-radius:12px;padding:25px;margin:25px 0}.eyebrow{font-size:.875rem;letter-spacing:.08em;text-transform:uppercase;color:#52667e}footer{border-top:1px solid #d5e0ec;color:#52667e;font-size:.875rem}a:focus-visible{outline:3px solid #135bae;outline-offset:4px}@media(max-width:540px){header{align-items:flex-start;flex-direction:column}header,main,footer{padding-left:20px;padding-right:20px}section{padding:20px}}
+  </style>
+</head>
+<body>
+  <header><strong>Alraed Database Backup</strong><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="privacy.html">Privacy policy</a></nav></header>
+  <main>
+    <p class="eyebrow">Personal database backup tool</p>
+    <h1>Full database backups saved to the owner's Google Drive.</h1>
+    <p>Alraed Database Backup is a personal Windows backup workflow operated by Mohammed Enad. It creates a full backup of the AlraedDb SQL database, checks the backup, and uploads the completed file to the owner's Google Drive.</p>
+    <section aria-labelledby="operation"><h2 id="operation">How the backup works</h2><ul><li>A Windows task starts the backup daily at 8:00 PM Baghdad time.</li><li>The database backup is saved locally and checked before upload.</li><li>rclone uploads the completed backup to a dedicated folder in the owner's Google Drive and checks the transferred file.</li><li>After a successful verified upload, the latest three backups remain in each location. Failed runs preserve existing backups for recovery.</li></ul></section>
+    <h2>Why Google Drive access is requested</h2>
+    <p>The owner authorizes Google Drive access so the local backup tool can create backup files, read their metadata for transfer verification, list its own backup files, and delete older backups according to the retention setting.</p>
+    <p>The workflow uses the <code>drive.file</code> permission, which limits access to files and folders created by or explicitly made available to the app. It does not request Gmail access. This website describes the workflow; it does not accept database uploads or ask for Google passwords.</p>
+    <h2>Privacy and support</h2>
+    <p>Read the <a href="privacy.html">privacy policy</a> for details about data access, storage, retention, and revoking authorization.</p>
+    <p>Operator and support contact: <a href="mailto:malmbasha@gmail.com">malmbasha@gmail.com</a>.</p>
+  </main>
+  <footer>Alraed Database Backup · Operated by Mohammed Enad</footer>
+</body>
+</html>
